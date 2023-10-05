@@ -115,6 +115,11 @@ class RiveReactNativeViewManager : SimpleViewManager<RiveReactNativeView>() {
     return RiveReactNativeView(reactContext)
   }
 
+  override fun onDropViewInstance(view: RiveReactNativeView) {
+      view.dispose();
+      super.onDropViewInstance(view)
+    }
+
   override fun onAfterUpdateTransaction(view: RiveReactNativeView) {
     super.onAfterUpdateTransaction(view)
     view.update()
